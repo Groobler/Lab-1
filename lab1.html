@@ -10,50 +10,32 @@
 <img src='mnwild.png' alt='Minnesota Wild' width='400' height='150'>
 <canvas id="myChart" width="400" height="200"></canvas>
 <script src="lab1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"/></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
 <script>
-var zeroToTen = 0;
+var zeroToTen = 0, tenToTwenty = 0, twentyToThirty = 0, thirtyToFourty = 0, fourtyToFifty = 0, fiftyToSixty = 0, sixtyToSeventy = 0;
 for(var i = 0; i < myObject.length; i++){
   if(myObject[i].Pts  <= 10){
 		zeroToTen  +=1;
 	}
-}	
-var tenToTwenty = 0;
-for(var i = 0; i < myObject.length; i++){
-	if(myObject[i].Pts >10 && myObject[i].Pts <=20){
+	else if(myObject[i].Pts >10 && myObject[i].Pts <=20){
 		tenToTwenty +=1;
 	}
-}
-var twentyToThirty = 0;
-for(var i = 0; i < myObject.length; i++){
-	if(myObject[i].Pts >=20 && myObject[i].Pts <=30){
+	else if(myObject[i].Pts >20 && myObject[i].Pts <=30){
 		twentyToThirty +=1;
 	}
-}
-var thirtyToFourty = 0;
-for(var i = 0; i < myObject.length; i++){
-	if(myObject[i].Pts >=30 && myObject[i].Pts <=40){
+	else if(myObject[i].Pts >30 && myObject[i].Pts <=40){
 		thirtyToFourty +=1;
 	}
-}
-var fourtyToFifty = 0;
-for(var i = 0; i < myObject.length; i++){
-	if(myObject[i].Pts >=40 && myObject[i].Pts <=50){
+	else if(myObject[i].Pts >40 && myObject[i].Pts <=50){
 		fourtyToFifty +=1;
 	}
-}
-var fiftyToSixty = 0;
-for(var i = 0; i < myObject.length; i++){
-	if(myObject[i].Pts >=50 && myObject[i].Pts <=60){
+	else if(myObject[i].Pts >50 && myObject[i].Pts <=60){
 		fiftyToSixty +=1;
 	}
-}
-var sixtyToSeventy = 0;
-for(var i = 0; i < myObject.length; i++){
-	if(myObject[i].Pts >=60 && myObject[i].Pts <=70){
+	else{
 		sixtyToSeventy +=1;
 	}
-}
+}	
 </script>
 	
 <script>
@@ -61,7 +43,7 @@ var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'bar',
 	data: {
-		labels: ["0-10", "10-20", "20-30", "30-40", "40-50", "50-60", "60-70"],
+		labels: ["0-10", "11-20", "21-30", "31-40", "41-50", "51-60", "61+"],
 			datasets: [
 			{
 				label :'Number of players scored amount of points',
